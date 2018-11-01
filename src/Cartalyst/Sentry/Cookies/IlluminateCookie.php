@@ -111,6 +111,7 @@ class IlluminateCookie implements CookieInterface {
 	 */
 	public function forever($value)
 	{
+        $value = serialize($value);
 		$cookie = $this->jar->forever($this->getKey(), $value);
 		$this->jar->queue($cookie);
 	}
